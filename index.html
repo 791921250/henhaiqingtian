@@ -6519,6 +6519,11 @@ window.addEventListener('resize',fitDesk);
 window.addEventListener('orientationchange',fitDesk);
 document.addEventListener('DOMContentLoaded',fitDesk);
 fitDesk();
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
 </script>
 <div class="lightbox" id="lightbox" hidden><img id="lightboxImg" alt=""><div class="lightbox-duo" id="lightboxDuo" hidden></div><span class="lb-hint">点 击 收 起</span></div>
 </body>
